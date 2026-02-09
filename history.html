@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Browser History</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="history.css">
+</head>
+<body>
+  <header>
+    <h1>Browser History</h1>
+  </header>
+  <main>
+    <div class="search-section">
+      <input type="text" class="search-field" placeholder="Search by Date...">
+      <input type="text" class="search-field" placeholder="Search by Title...">
+      <input type="text" class="search-field" placeholder="Search by Domain...">
+    </div>
+
+    <div class="params-search-section">
+      <label class="params-search-label">Search by Parameters:</label>
+      <div class="params-search-container" id="paramsSearchContainer">
+        <div class="params-search-row">
+          <input type="text" class="params-key-input" placeholder="Enter key...">
+          <input type="text" class="params-value-input" placeholder="Enter value...">
+          <button class="add-param-btn" aria-label="Add parameter pair">
+            <span class="material-icons">add</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table id="historyTable">
+        <thead>
+          <tr>
+            <th class="col-date">Date</th>
+            <th class="col-title">Title</th>
+            <th class="col-domain">Domain</th>
+            <th class="col-params">Parameters</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- rows inserted here -->
+        </tbody>
+      </table>
+    </div>
+
+    <div id="pagination" class="pagination">
+      <button id="prevBtn" class="md-button" aria-label="Previous page"><span class="material-icons">chevron_left</span>Prev</button>
+      <span id="pageInfo" class="page-info">Page 1</span>
+      <button id="nextBtn" class="md-button" aria-label="Next page">Next<span class="material-icons">chevron_right</span></button>
+      <label class="page-size">Page size:
+        <select id="pageSizeSelect" class="md-select">
+          <option value="25">25</option>
+          <option value="50" selected>50</option>
+          <option value="100">100</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="tips-section">
+      <h3>Tips & Tricks</h3>
+      <ul>
+        <li><strong>Tip 1:</strong> Use the search fields to filter history by date, title, domain, or parameters.</li>
+        <li><strong>Tip 2:</strong> Click on a domain to view all URLs from that domain.</li>
+        <li><strong>Tip 3:</strong> The Parameters column shows URL query parameters in a nested table format.</li>
+        <li><strong>Tip 4:</strong> Use keyboard shortcut Ctrl+Shift+H to open this extension quickly.</li>
+      </ul>
+    </div>
+  </main>
+  <script src="history.js"></script>
+</body>
+</html>
